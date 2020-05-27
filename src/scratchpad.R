@@ -59,4 +59,8 @@ plot_ly(x = t, y = Eb, type = 'scatter', mode = 'lines', name = "SPY")%>%
   add_trace(y = Et2, name = "Portfolio 2")%>%
   add_segments(x = 0, xend = 900, y = 10000, yend = 10000)%>%
   layout(xaxis = list('title' = "time"), yaxis = list('title' = "Equity ($)"))
-  
+#################calculating ratios#####################################################
+#Sharpe ratio
+SR<-mean(Rt, na.rm = TRUE)/sd(Rt, na.rm = TRUE)
+SR2<-mean(Rt2, na.rm = TRUE)/sd(Rt2, na.rm = TRUE)
+SRb<-mean(Rb, na.rm = TRUE)/sd(Rb, na.rm = TRUE)
