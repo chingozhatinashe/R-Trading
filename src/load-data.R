@@ -40,7 +40,7 @@ for(i in stock.symb){
     if(!weekend & !span){
       #download data from API
       df = tryCatch({
-        getSymbols(c(i), from = strptime(currentTime, "%Y-%m-%d"), auto.assign = FALSE)
+        getSymbols(c(i), from = strptime(maxdate, "%Y-%m-%d"), auto.assign = FALSE)
       }, error = function(e){
         NULL
       })
@@ -49,7 +49,7 @@ for(i in stock.symb){
       if(!is.null(df)){
         if(all(!is.na(df)) & nrow(df) > 0){
           df<-df[nrow(df):1]
-          write.zoo(df, file = paste0("stockdata/", i, ".csv"), index.name = "Date", append = TRUE)
+          write.zoo(df, file = paste0("stockdata/", i, ".csv"), index.name = "Date", append = TRUE, col.names = FALSE)
           DATA[[i]]<-rbind(DATA[[i]], df)
         }
       }
