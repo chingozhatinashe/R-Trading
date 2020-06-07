@@ -35,7 +35,7 @@ for(s in S){
   DATA[[s]] <- NULL
   # Update user on progress
   if( which ( S == s ) %% 25 == 0 ){
-    cat ( paste0 ( round (100 * which ( S == s ) / length (S), 1), "% Complete\n") )
+    cat(paste0(round(100*which(S == s)/length(S), 1), "% Complete\n"))
   }
 }
 

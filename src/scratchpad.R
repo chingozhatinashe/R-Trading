@@ -5,6 +5,7 @@ library(dplyr)
 library(magrittr)
 library(tidyverse)
 library(data.table)
+library(broom)
 #supress warnings
 options("getSymbols.warning4.0" = FALSE,
         "getSymbols.auto.assign" = FALSE)
